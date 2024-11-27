@@ -36,7 +36,7 @@ void mostrarMenu() {
     cout << "4. Mostrar peliculas con calificacion\n";
     cout << "5. Calificar un video\n";
     cout << "0. Salir\n";
-    cout << "Generos disponibles : Drama, Sci - fi, Mystery, Accion, Crimen, Animacion, Comedia, Fantasia, Romance, Historia" << endl;
+    cout << "Generos disponibles : Drama, Sci - fi, Mystery, Action, Crime, Animation, Comedy, Fantasy, Romance, History" << endl;
     cout << "Ingrese una opcion: ";
 }
 

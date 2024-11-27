@@ -1,8 +1,60 @@
 pelicula;P001;Inception;148;Sci-fi;4.8
 pelicula;P002;Interstellar;169;Sci-fi;4.6
+pelicula;P003;The Matrix;136;Action;4.7
+pelicula;P004;The Godfather;175;Drama;4.9
+pelicula;P005;Pulp Fiction;154;Crime;4.8
+pelicula;P006;The Dark Knight;152;Action;4.9
+pelicula;P007;Forrest Gump;142;Drama;4.6
+pelicula;P008;Fight Club;139;Drama;4.4
+pelicula;P009;The Shawshank Redemption;142;Drama;4.9
+pelicula;P010;The Lion King;89;Animation;4.7
+pelicula;P011;Avatar;162;Fantasy;4.4
+pelicula;P012;Titanic;195;Romance;4.7
+pelicula;P013;The Avengers;143;Action;4.5
+pelicula;P014;Gladiator;155;Action;4.6
+pelicula;P015;The Prestige;130;Mystery;4.7
+pelicula;P016;WALL-E;98;Animation;4.8
+pelicula;P017;Spirited Away;125;Animation;4.9
+pelicula;P018;The Incredibles;115;Animation;4.7
+pelicula;P019;Coco;105;Animation;4.8
+pelicula;P020;Braveheart;178;History;4.7
+pelicula;P021;Goodfellas;146;Crime;4.8
+pelicula;P022;The Silence of the Lambs;118;Thriller;4.7
+pelicula;P023;Schindler's List;195;History;4.9
+pelicula;P024;Parasite;132;Thriller;4.6
+pelicula;P025;Whiplash;107;Drama;4.7
+pelicula;P026;Mad Max: Fury Road;120;Action;4.6
+pelicula;P027;The Pianist;150;Biography;4.8
+pelicula;P028;The Green Mile;189;Drama;4.9
+pelicula;P029;Django Unchained;165;Western;4.7
+pelicula;P030;The Departed;151;Crime;4.7
 serie;S001;Breaking Bad;47;Drama;4.9
 episodio;Pilot;1;5.0
 episodio;Cat's in the Bag...;1;4.8
 serie;S002;Stranger Things;51;Mystery;4.7
 episodio;Chapter One: The Vanishing of Will Byers;1;4.9
 episodio;Chapter Two: The Weirdo on Maple Street;1;4.7
+serie;S003;Game of Thrones;57;Fantasy;4.8
+episodio;Winter Is Coming;1;4.7
+episodio;The Kingsroad;1;4.5
+serie;S004;The Office;22;Comedy;4.6
+episodio;Pilot;1;4.3
+episodio;Diversity Day;1;4.5
+serie;S005;Friends;22;Comedy;4.8
+episodio;The One Where Monica Gets a Roommate;1;4.6
+episodio;The One with the Sonogram at the End;1;4.5
+serie;S006;Sherlock;88;Mystery;4.9
+episodio;A Study in Pink;1;4.9
+episodio;The Blind Banker;1;4.6
+serie;S007;Rick and Morty;23;Animation;4.7
+episodio;Pilot;1;4.8
+episodio;Lawnmower Dog;1;4.6
+serie;S008;The Simpsons;22;Animation;4.5
+episodio;Simpsons Roasting on an Open Fire;1;4.4
+episodio;Bart the Genius;1;4.3
+serie;S009;The Mandalorian;40;Sci-fi;4.8
+episodio;Chapter 1: The Mandalorian;1;4.8
+episodio;Chapter 2: The Child;1;4.7
+serie;S010;The Crown;58;Drama;4.6
+episodio;Wolferton Splash;1;4.5
+episodio;Hyde Park Corner;1;4.6

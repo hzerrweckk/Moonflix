@@ -146,11 +146,13 @@ int main(){
 
             // Convertir filtro a minúsculas para comparar géneros de forma insensible a mayúsculas
             transform(filtro.begin(), filtro.end(), filtro.begin(), ::tolower);
+            filtro.erase(remove_if(filtro.begin(), filtro.end(), ::isspace), filtro.end());
 
             for (Video* video : videos) {
-                // Obtener el género en minúsculas para hacer una comparación insensible a mayúsculas
+                // Obtener el género en minúsculas y quitar espacios en blanco para hacer una comparación insensible a mayúsculas y espacios
                 string generoVideo = video->getGenero();
                 transform(generoVideo.begin(), generoVideo.end(), generoVideo.begin(), ::tolower);
+                generoVideo.erase(remove_if(generoVideo.begin(), generoVideo.end(), ::isspace), generoVideo.end());
 
                 if (generoVideo == filtro || to_string(static_cast<int>(video->getCalificacion())) == filtro) {
                     video->mostrar();

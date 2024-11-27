@@ -10,11 +10,11 @@
 #include <sstream>
 using namespace std;
 
-
+string red = "\033[31m";
+string yellow = "\033[33m";
+string reset = "\033[0m";
 void mostrarMenu() {
-        string red = "\033[31m";
-    string yellow = "\033[33m";
-    string reset = "\033[0m";
+
 
     cout <<red <<R"(
  
@@ -130,7 +130,7 @@ int main(){
         }
         case 2: {
             // Mostrar videos de un cierto genero o calificacion
-            cout << red << R"(
+            cout << yellow << R"(
 
 ██╗░░░██╗██╗██████╗░███████╗░█████╗░  ██╗░░░░░██╗░██████╗████████╗
 ██║░░░██║██║██╔══██╗██╔════╝██╔══██╗  ██║░░░░░██║██╔════╝╚══██╔══╝

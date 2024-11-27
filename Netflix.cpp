@@ -52,7 +52,7 @@ int main(){
         switch (opcion) {
         case 1: {
             cout << "Cargando archivo de datos...\n";
-            ifstream archivo("Datos.txt");
+            ifstream archivo("/workspaces/Moonflix/Datos.txt");
             if (!archivo.is_open()) {
                 cout << "Error al abrir el archivo de datos.\n";
                 break;

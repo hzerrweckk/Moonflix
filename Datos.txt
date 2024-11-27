@@ -1,0 +1,8 @@
+pelicula;P001;Inception;148;Sci-fi;4.8
+pelicula;P002;Interstellar;169;Sci-fi;4.6
+serie;S001;Breaking Bad;47;Drama;4.9
+episodio;Pilot;1;5.0
+episodio;Cat's in the Bag...;1;4.8
+serie;S002;Stranger Things;51;Mystery;4.7
+episodio;Chapter One: The Vanishing of Will Byers;1;4.9
+episodio;Chapter Two: The Weirdo on Maple Street;1;4.7

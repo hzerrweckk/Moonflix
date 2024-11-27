@@ -13,6 +13,7 @@ using namespace std;
 string red = "\033[31m";
 string yellow = "\033[33m";
 string reset = "\033[0m";
+
 void mostrarMenu() {
 
 
@@ -26,8 +27,8 @@ void mostrarMenu() {
 ╚═╝░░░░░╚═╝░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚══════╝╚═╝╚═╝░░╚═╝  
                                                                                                                 
 )"<<reset << '\n' << endl;
-    cout << "Welcome to \"Moonflix\", the largest video streaming platform in history." << endl;
-    cout << "We offer the following services, please select one: " << endl;
+    cout << "Bienvenido a \"Moonflix\", la plataforma de streaming mas grande de la historia..." << endl;
+    cout << "Ofrecemos los siguientes servicios, selecciona uno: " << endl;
     cout << "\nMenu:\n";
     cout << "1. Cargar archivo de datos\n";
     cout << "2. Mostrar videos con calificacion o genero\n";

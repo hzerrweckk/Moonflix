@@ -8,20 +8,15 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <windows.h>
 using namespace std;
 
-void setColor(int color) {
-    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, color);
-}
 
-void mostrarTitulo() {
-    // Cambiar el color a rojo
-    setColor(4); // Color rojo
+void mostrarMenu() {
+        string red = "\033[31m";
+    string yellow = "\033[33m";
+    string reset = "\033[0m";
 
-    // Imprimir el arte ASCII del título
-    std::cout << R"(
+    cout <<red <<R"(
  
 ███╗░░░███╗░█████╗░░█████╗░███╗░░██╗███████╗██╗░░░░░██╗██╗░░██╗
 ████╗░████║██╔══██╗██╔══██╗████╗░██║██╔════╝██║░░░░░██║╚██╗██╔╝
@@ -29,16 +24,10 @@ void mostrarTitulo() {
 ██║╚██╔╝██║██║░░██║██║░░██║██║╚████║██╔══╝░░██║░░░░░██║░██╔██╗░
 ██║░╚═╝░██║╚█████╔╝╚█████╔╝██║░╚███║██║░░░░░███████╗██║██╔╝╚██╗
 ╚═╝░░░░░╚═╝░╚════╝░░╚════╝░╚═╝░░╚══╝╚═╝░░░░░╚══════╝╚═╝╚═╝░░╚═╝  
-    )" << std::endl;
-
-    // Restablecer el color a blanco
-    setColor(7);
-}
-
-
-
-void mostrarMenu() {
-    mostrarTitulo();
+                                                                                                                
+)"<<reset << '\n' << endl;
+    cout << "Welcome to \"Moonflix\", the largest video streaming platform in history." << endl;
+    cout << "We offer the following services, please select one: " << endl;
     cout << "\nMenu:\n";
     cout << "1. Cargar archivo de datos\n";
     cout << "2. Mostrar videos con calificacion o genero\n";
@@ -141,6 +130,15 @@ int main(){
         }
         case 2: {
             // Mostrar videos de un cierto genero o calificacion
+            cout << yellow << R"(
+
+██╗░░░██╗██╗██████╗░███████╗░█████╗░  ██╗░░░░░██╗░██████╗████████╗
+██║░░░██║██║██╔══██╗██╔════╝██╔══██╗  ██║░░░░░██║██╔════╝╚══██╔══╝
+╚██╗░██╔╝██║██║░░██║█████╗░░██║░░██║  ██║░░░░░██║╚█████╗░░░░██║░░░
+░╚████╔╝░██║██║░░██║██╔══╝░░██║░░██║  ██║░░░░░██║░╚═══██╗░░░██║░░░
+░░╚██╔╝░░██║██████╔╝███████╗╚█████╔╝  ███████╗██║██████╔╝░░░██║░░░
+░░░╚═╝░░░╚═╝╚═════╝░╚══════╝░╚════╝░  ╚══════╝╚═╝╚═════╝░░░░╚═╝░░░
+        )" << reset << endl;
             cout << "Ingrese genero o calificacion para filtrar: ";
             string filtro;
             getline(cin, filtro);

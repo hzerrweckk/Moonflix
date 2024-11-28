@@ -206,19 +206,24 @@ int main(){
     break;
         }
         case 5: {
-            cout << "Ingrese el nombre de la pelicula a calificar: ";
+            cout << "Ingrese el nombre del video a calificar: ";
             string nombreVideo;
             getline(cin, nombreVideo);
+            transform(nombreVideo.begin(), nombreVideo.end(), nombreVideo.begin(), ::tolower);
+            nombreVideo.erase(remove_if(nombreVideo.begin(), nombreVideo.end(), ::isspace), nombreVideo.end());
             cout << "Ingrese la nueva calificacion: ";
             double nuevaCalificacion;
             cin >> nuevaCalificacion;
             cin.ignore();
             for (auto& video : videos) {
-                if (video->getNombre() == nombreVideo) {
+                string nombreActual = video->getNombre();
+                transform(nombreActual.begin(), nombreActual.end(), nombreActual.begin(), ::tolower);
+                nombreActual.erase(remove_if(nombreActual.begin(), nombreActual.end(), ::isspace), nombreActual.end());
+                if (nombreActual == nombreVideo) {
                     double calificacionActual = video->getCalificacion();
                     double calificacionPromediada = (calificacionActual + nuevaCalificacion) / 2;
                     video->calificar(calificacionPromediada);
-                    cout << "Pelicula calificada exitosamente con un nuevo promedio de " << calificacionPromediada << ".\n";
+                    cout << "Video calificado exitosamente con un nuevo promedio de " << calificacionPromediada << ".\n";
                 }
             }
             break;

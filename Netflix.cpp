@@ -47,7 +47,7 @@ int main(){
     do {
         mostrarMenu();
         cin >> opcion;
-        cin.ignore(); // Ignorar el salto de línea después de la opción ingresada
+        cin.ignore();
 
         switch (opcion) {
         case 1: {
@@ -60,7 +60,7 @@ int main(){
 
             string linea;
             while (getline(archivo, linea)) {
-                // Ignorar comentarios (líneas que comienzan con # o //)
+                
                 if (linea.empty() || linea[0] == '#' || (linea.size() > 1 && linea[0] == '/' && linea[1] == '/')) {
                     continue; // Saltar a la siguiente línea
                 }
@@ -144,12 +144,12 @@ int main(){
             string filtro;
             getline(cin, filtro);
 
-            // Convertir filtro a minúsculas para comparar géneros de forma insensible a mayúsculas
+            
             transform(filtro.begin(), filtro.end(), filtro.begin(), ::tolower);
             filtro.erase(remove_if(filtro.begin(), filtro.end(), ::isspace), filtro.end());
 
             for (Video* video : videos) {
-                // Obtener el género en minúsculas y quitar espacios en blanco para hacer una comparación insensible a mayúsculas y espacios
+                
                 string generoVideo = video->getGenero();
                 transform(generoVideo.begin(), generoVideo.end(), generoVideo.begin(), ::tolower);
                 generoVideo.erase(remove_if(generoVideo.begin(), generoVideo.end(), ::isspace), generoVideo.end());

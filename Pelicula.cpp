@@ -13,6 +13,6 @@ void Pelicula::mostrar(bool detalle) {
         std::cout << "Pelicula: " << nombre << "Genero: " << genero << "Duracion : " << duracion << " mins Calificacion : " << calificacion << std::endl;
     }
     else {
-        mostrar(); // Llamar a la versión básica
+        mostrar();
     }
 }

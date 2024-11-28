@@ -62,7 +62,7 @@ int main(){
             while (getline(archivo, linea)) {
                 
                 if (linea.empty() || linea[0] == '#' || (linea.size() > 1 && linea[0] == '/' && linea[1] == '/')) {
-                    continue; // Saltar a la siguiente línea
+                    continue; 
                 }
 
                 stringstream ss(linea);
@@ -117,7 +117,7 @@ int main(){
                             serie->agregarEpisodio(titulo, temporada, calificacionEpisodio);
                         }
                         else {
-                            // Si no es un episodio, retrocedemos la posición de lectura para la siguiente iteración
+                            
                             archivo.seekg(-(static_cast<std::streamoff>(linea.size()) + 1), ios::cur);
                             break;
                         }
@@ -176,16 +176,31 @@ int main(){
             break;
         }
         case 4: {
-            cout << "Ingrese la calificacion: ";
-            double calif;
-            cin >> calif;
-            cin.ignore();
-            for (auto& video : videos) {
-                Pelicula* pelicula = dynamic_cast<Pelicula*>(video);
-                if (pelicula && pelicula->getCalificacion() == calif) {
-                    pelicula->mostrar();
-                }
-            }
+            cout << "Ingrese la calificacion (entre 1 y 5): ";
+double calif;
+cin >> calif;
+cin.ignore();
+
+// Verificar que la calificación esté en el rango válido
+if (calif < 1.0 || calif > 5.0) {
+    cout << "Calificación inválida. Debe estar entre 1 y 5.\n";
+    break;
+}
+
+// Filtrar y mostrar películas con la calificación especificada
+bool peliculasEncontradas = false;
+for (auto& video : videos) {
+    Pelicula* pelicula = dynamic_cast<Pelicula*>(video);
+    if (pelicula && static_cast<int>(pelicula->getCalificacion()) == static_cast<int>(calif)) {
+        pelicula->mostrar();
+        peliculasEncontradas = true;
+    }
+}
+
+if (!peliculasEncontradas) {
+    cout << "No se encontraron películas con la calificación " << calif << ".\n";
+}
+
             break;
         }
         case 5: {

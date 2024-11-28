@@ -191,7 +191,7 @@ int main(){
         Pelicula* pelicula = dynamic_cast<Pelicula*>(video);
         if (pelicula) {
             // Imprime para depurar la calificación de la película
-            cout << "Comparando con la calificación de la película '" << pelicula->getNombre() << "': " << pelicula->getCalificacion() << endl;
+            cout << "Pelicula: '" << pelicula->getNombre() << "': " << pelicula->getCalificacion() << endl;
 
             if (abs(pelicula->getCalificacion() - calif) < 0.01) {
                 pelicula->mostrar();

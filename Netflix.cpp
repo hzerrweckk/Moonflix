@@ -206,7 +206,7 @@ int main(){
     break;
         }
         case 5: {
-            cout << "Ingrese el nombre del video a calificar: ";
+            cout << "Ingrese el nombre de la pelicula a calificar: ";
             string nombreVideo;
             getline(cin, nombreVideo);
             cout << "Ingrese la nueva calificacion: ";
@@ -218,7 +218,7 @@ int main(){
                     double calificacionActual = video->getCalificacion();
                     double calificacionPromediada = (calificacionActual + nuevaCalificacion) / 2;
                     video->calificar(calificacionPromediada);
-                    cout << "Video calificado exitosamente con un nuevo promedio de " << calificacionPromediada << ".\n";
+                    cout << "Pelicula calificada exitosamente con un nuevo promedio de " << calificacionPromediada << ".\n";
                 }
             }
             break;

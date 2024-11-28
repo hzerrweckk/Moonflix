@@ -177,31 +177,28 @@ int main(){
         }
         case 4: {
             cout << "Ingrese la calificacion (entre 1 y 5): ";
-double calif;
-cin >> calif;
-cin.ignore();
+    double calif;
+    cin >> calif;
+    cin.ignore();
+    bool peliculasEncontradas = false;
 
-// Verificar que la calificación esté en el rango válido
-if (calif < 1.0 || calif > 5.0) {
-    cout << "Calificación inválida. Debe estar entre 1 y 5.\n";
-    break;
-}
+    for (auto& video : videos) {
+        Pelicula* pelicula = dynamic_cast<Pelicula*>(video);
+        if (pelicula) {
+            // Imprime para depurar la calificación de la película
+            cout << "Comparando con la calificación de la película '" << pelicula->getNombre() << "': " << pelicula->getCalificacion() << endl;
 
-// Filtrar y mostrar películas con la calificación especificada
-bool peliculasEncontradas = false;
-for (auto& video : videos) {
-    Pelicula* pelicula = dynamic_cast<Pelicula*>(video);
-    if (pelicula && static_cast<int>(pelicula->getCalificacion()) == static_cast<int>(calif)) {
-        pelicula->mostrar();
-        peliculasEncontradas = true;
+            if (abs(pelicula->getCalificacion() - calif) < 0.01) {
+                pelicula->mostrar();
+                peliculasEncontradas = true;
+            }
+        }
     }
-}
 
-if (!peliculasEncontradas) {
-    cout << "No se encontraron películas con la calificación " << calif << ".\n";
-}
-
-            break;
+    if (!peliculasEncontradas) {
+        cout << "No se encontraron películas con la calificación " << calif << ".\n";
+    }
+    break;
         }
         case 5: {
             cout << "Ingrese el nombre del video a calificar: ";

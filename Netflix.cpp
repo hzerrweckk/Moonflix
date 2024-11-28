@@ -215,6 +215,7 @@ int main(){
             double nuevaCalificacion;
             cin >> nuevaCalificacion;
             cin.ignore();
+            bool videoEncontrado = false;
             for (auto& video : videos) {
                 string nombreActual = video->getNombre();
                 transform(nombreActual.begin(), nombreActual.end(), nombreActual.begin(), ::tolower);
@@ -224,7 +225,11 @@ int main(){
                     double calificacionPromediada = (calificacionActual + nuevaCalificacion) / 2;
                     video->calificar(calificacionPromediada);
                     cout << "Video calificado exitosamente con un nuevo promedio de " << calificacionPromediada << ".\n";
+                    videoEncontrado = true;
                 }
+            }
+            if (!videoEncontrado) {
+                cout << "No se encontró un video con ese nombre.\n";
             }
             break;
         }

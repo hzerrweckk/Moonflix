@@ -19,6 +19,7 @@ public:
 	void agregarEpisodio(std::string titulo, int temportada, double calficacion);
 	void mostrar() override;
 	void mostrarEpisodiosConCalificacion(double calif);
+	friend std::ostream& operator<<(std::ostream& os, const Serie& serie); // Sobrecarga de operador
 
 };
 

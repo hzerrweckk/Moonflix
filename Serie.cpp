@@ -24,3 +24,11 @@ void Serie::mostrarEpisodiosConCalificacion(double calif) {
         }
     }
 }
+
+std::ostream& operator<<(std::ostream& os, const Serie& serie) {
+    os << "Serie: " << serie.nombre << " | Genero: " << serie.genero << " | Duracion promedio: " << serie.duracion << " mins | Calificacion promedio: " << serie.calificacion << std::endl;
+    for (const auto& episodio : serie.episodios) {
+        os << "  Episodio: " << episodio.titulo << " | Temporada: " << episodio.temporada << " | Calificacion: " << episodio.calificacion << std::endl;
+    }
+    return os;
+}

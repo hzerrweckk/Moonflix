@@ -95,9 +95,9 @@ int main(){
                     Serie* serie = new Serie(id, nombre, duracion, genero, calificacion);
                     videos.push_back(serie);
                     while (getline(archivo, linea)) {
-                        // Ignorar comentarios en los episodios también
+                        
                         if (linea.empty() || linea[0] == '#' || (linea.size() > 1 && linea[0] == '/' && linea[1] == '/')) {
-                            continue; // Saltar a la siguiente línea
+                            continue; 
                         }
 
                         stringstream ssEpisodio(linea);
@@ -161,17 +161,22 @@ int main(){
             break;
         }
         case 3: {
-            cout << "Ingrese el nombre de la serie y la calificacion: ";
-            string nombreSerie;
+            cout << "Ingrese la calificacion (entre 1 y 5): ";
             double calificacion;
-            getline(cin, nombreSerie);
             cin >> calificacion;
             cin.ignore();
+            bool seriesEncontradas = false;
+
             for (auto& video : videos) {
                 Serie* serie = dynamic_cast<Serie*>(video);
-                if (serie && serie->getNombre() == nombreSerie) {
-                    serie->mostrarEpisodiosConCalificacion(calificacion);
+                if (serie && abs(serie->getCalificacion() - calificacion) < 0.1) {
+                    serie->mostrar();
+                    seriesEncontradas = true;
                 }
+            }
+
+            if (!seriesEncontradas) {
+                cout << "No se encontraron series con la calificacion aproximada de " << calificacion << ".\n";
             }
             break;
         }
@@ -196,7 +201,7 @@ int main(){
     }
 
     if (!peliculasEncontradas) {
-        cout << "No se encontraron películas con la calificación " << calif << ".\n";
+        cout << "Mostrando calificaciones similares... " << calif << ".\n";
     }
     break;
         }
@@ -210,8 +215,10 @@ int main(){
             cin.ignore();
             for (auto& video : videos) {
                 if (video->getNombre() == nombreVideo) {
-                    video->calificar(nuevaCalificacion);
-                    cout << "Video calificado exitosamente.\n";
+                    double calificacionActual = video->getCalificacion();
+                    double calificacionPromediada = (calificacionActual + nuevaCalificacion) / 2;
+                    video->calificar(calificacionPromediada);
+                    cout << "Video calificado exitosamente con un nuevo promedio de " << calificacionPromediada << ".\n";
                 }
             }
             break;
